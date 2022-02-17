@@ -1,0 +1,7 @@
+<%= simple_form_for [ @list, @bookmark ] do |f| %>
+  <%= f.input :comment %>
+  <%= f.association :movie %>
+  <%= f.submit "Add bookmark to this list", class: "btn btn-primary" %>
+<% end %>
+
+<%# , collection: Movie.all %>
