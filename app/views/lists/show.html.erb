@@ -1,25 +1,20 @@
 <h1><%= @list.name %></h1>
 
-
-<%# TODO: display movies in this list %>
+<br>
 <% @list.movies.each do |movie| %>
-<%= movie.title %> <br>
-<%= movie.overview %> <br>
-<%= movie.rating%> <br>
-<%= movie.poster_url%> <br>
+<% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
+<h3><%= movie.title %></h3>
+<p><%= movie.overview %></p>
+<p>Rating: <%= movie.rating%></p>
+<p><%= movie.poster_url%></p>
+<p>Comment: <%= bookmark.comment %> </p>
+<%# <% @list.bookmarks.each do |bm| %>
+<%# <%= bm.comment %>
+<%= link_to "Delete bookmark from this list", bookmark_path(bookmark), method: :delete, data: { confirm: "Are you sure?" } %><br>
 <% end %>
 
-<% @list.bookmarks.each do |bm| %>
-<%= bm.comment %> <br>
-<% end %>
-
-<%# TODO: correct delete url path! %>
-<%= link_to "Delete bookmark from this list", bookmark_path, method: :delete, data: { confirm: "Are you sure?" } %><br>
 
 <br>
 <%= link_to "Add new bookmark", new_list_bookmark_path(@list) %> <br>
 
 <%= link_to "Back to My Lists", lists_path %>
-
-<%# shawshank image
-https://m.media-amazon.com/images/M/MV5BNTYxOTYyMzE3NV5BMl5BanBnXkFtZTcwOTMxNDY3Mw@@._V1_.jpg %>

@@ -4,19 +4,9 @@
   </div>
 </div>
 
-<%# TODO: fix images url %>
-<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('./assets/images/drama2.jpg')">
-  <%= link_to @lists[0].name, list_path(@lists[0]) %>
-</div>
+<% @lists.each do |list| %>
+<h3><%= link_to list.name, list_path(list) %></h3>
+<% end %>
 
-<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../assets/images/terror2.jpg')">
-  <%= link_to @lists[1].name, list_path(@lists[1]) %></div>
-</div>
-
-<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/comedy.jpg')">
-  <%= link_to @lists[2].name, list_path(@lists[2]) %></div>
-</div>
-
-
-
+<br>
 <%= link_to "Create new watch list", new_list_path %>
