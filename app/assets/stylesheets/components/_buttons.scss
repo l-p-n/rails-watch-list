@@ -1,9 +1,12 @@
 .btn-add-list {
   border-radius: 4px;
   background-color: $red;
-  color: white !important;
   padding: 12px 22px;
   width: fit-content;
   margin-bottom: 36px;
   margin-left: 66px;
+
+  a {
+    color: white;
+  }
 }
