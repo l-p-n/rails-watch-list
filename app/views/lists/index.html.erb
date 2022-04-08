@@ -1,33 +1,18 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('<%= cl_image_path("v1645195998/swkqfmxqzmqocinhdhyf.jpg")%>')">
-  <div class="container">
-    <h1>Save any kind of films</h1>
-  </div>
+<div class="banner">
+  <h1>Save any kind of films</h1>
 </div>
-
-<% @lists.each do |list| %>
-<h3><%= link_to list.name, list_path(list) %></h3>
-<% end %>
 
 <div class="container">
-  <div class="row justify-content-center">
-    <div class="col-12 col-lg-4">
-      <!-- This div is centered and takes 6 columns -->
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.1)), url('<%= cl_image_path("v1645195978/bu8ejrw9ivzyluapxynq.jpg")%>')">
-        <%= @lists[0].name  %>
-      </div>
-    </div>
-    <div class="col-12 col-lg-4">
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.1)), url('<%= cl_image_path("v1645195866/nj1mmfs7y9rzjzfhqpcf.jpg")%>')">
-        <%= @lists[2].name  %>
-      </div>
-    </div>
-    <div class="col-12 col-lg-4">
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.1)), url('<%= cl_image_path("v1645195968/aq7fux2lztyb5cymlvh2.jpg")%>')">
-        <%= @lists[1].name  %>
-      </div>
-    </div>
+  <div class="btn-add-list">
+    <%= link_to "Create new watch list", new_list_path %>
+  </div>
+  <div class="cards-grid">
+    <% @lists.each do |list| %>
+      <%= link_to list do %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path list.photo.key, height: 180, crop: :fill %>')">
+          <%= list.name %>
+        </div>
+      <% end %>
+    <% end %>
   </div>
 </div>
-
-<br>
-<%= link_to "Create new watch list", new_list_path %>

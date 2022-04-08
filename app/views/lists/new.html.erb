@@ -1,7 +1,9 @@
-<%= simple_form_for [ @list ] do |f| %>
-  <%= f.input :name %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit "Create Watch List", class: "btn btn-primary" %>
-<% end %>
-<br>
-<%= link_to "Back to My Lists", lists_path %>
+<div class="container">
+  <%= simple_form_for [ @list ] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit "Create Watch List", class: "btn btn-primary" %>
+  <% end %>
+  <br>
+  <%= link_to "Back to My Lists", lists_path %>
+</div>
