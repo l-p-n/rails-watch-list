@@ -1,12 +1,17 @@
+.add-list {
+  text-align: end;
+  margin: 48px 66px 58px 0px;
+}
+
 .btn-add-list {
   border-radius: 4px;
   background-color: $red;
   padding: 12px 22px;
   width: fit-content;
-  margin-bottom: 36px;
-  margin-left: 66px;
+  color: white;
 
-  a {
+  &:hover {
     color: white;
+    background-color: $dark-red;
   }
 }

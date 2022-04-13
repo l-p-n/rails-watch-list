@@ -5,5 +5,5 @@ Rails.application.routes.draw do
     resources :bookmarks, only: [:new, :create]
   end
   resources :bookmarks, only: [:destroy]
-  get 'movies', to: 'movies#search'
+  get 'results', to: 'movies#search'
 end

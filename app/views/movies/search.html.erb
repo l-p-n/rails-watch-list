@@ -1,16 +1,9 @@
-<div class="row justify-content-center">
-  <div class="col-sm-8">
-    <div id="movies">
-      <% if @results.count > 0 %>
+<div class="container">
+  <% unless @results.count == 0 %>
+      <div class="search-results">
         <% @results.each do |result| %>
-          <h4><%= result.title %></h4>
-          <p><%= result.overview %></p>
-          <p><%= result.rating %></p>
-          <img src="<%= result.poster_url %>" alt="movie poster" width="500px">
+          <img src="<%= result.poster_url %>" alt="movie poster">
         <% end %>
-      <% else %>
-        <p>Nothing searched</p>
-      <% end %>
-    </div>
-  </div>
+      </div>
+    <% end %>
 </div>
