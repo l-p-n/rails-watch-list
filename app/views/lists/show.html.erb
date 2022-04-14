@@ -1,26 +1,42 @@
-<div class="banner">
-  <div class="container">
-    <h1><%= @list.name %></h1>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 col-lg-2" style="background-image: linear-gradient(black, 70%, #F4F4F4); padding: 0px">
+      <div class="list-img" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path @list.photo.key, height: 185, width: 320, crop: :fill %>')">
+        <h2 style="color: white; padding-top: 150px; padding-left: 20px;"><%= @list.name %></h2>
+      </div>
+      <div class="links">
+        <%= link_to "Add new film", new_list_bookmark_path(@list), class: "btn-add" %> <br>
+        <%= link_to "Back to My Watch Lists", lists_path, class: "btn-back" %>
+      </div>
+    </div>
+
+    <div class="col-12 col-lg-10" style="margin-top: 34px; margin-bottom: 34px;">
+      <div class="movie-cards-grid">
+        <% @list.movies.each do |movie| %>
+        <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
+          <div class="movie-card">
+            <img src="<%= movie.poster_url %>" alt="movie poster">
+            <div class="movie-card-infos">
+              <div class="movie-card-heading">
+                <h5><%= movie.title %></h5>
+              </div>
+              <div class="movie-card-overview">
+                <p><%= movie.overview %></p>
+              </div>
+              <div class="movie-card-reviews">
+                <p id="rating">Rating: <%= movie.rating%></p>
+                <i class="fa-solid fa-quote-left"></i><p><%= bookmark.comment %></p><i class="fa-solid fa-quote-right"></i>
+              </div>
+              <div class="movie-card-link">
+                <%= link_to bookmark_path(bookmark), method: :delete, data: { confirm: "Are you sure?" }, remote: true, class: "trashcan" do %>
+                  <i class="fa-solid fa-trash"></i>
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <% end %>
+      </div>
+
+    </div>
   </div>
 </div>
-
-<%# <%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
-
-<br>
-<% @list.movies.each do |movie| %>
-<% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
-<h3><%= movie.title %></h3>
-<p><%= movie.overview %></p>
-<p>Rating: <%= movie.rating%></p>
-<p><%= movie.poster_url%></p>
-<p>Comment: <%= bookmark.comment %> </p>
-<%# <% @list.bookmarks.each do |bm| %>
-<%# <%= bm.comment %>
-<%= link_to "Delete bookmark from this list", bookmark_path(bookmark), method: :delete, data: { confirm: "Are you sure?" } %><br>
-<% end %>
-
-
-<br>
-<%= link_to "Add new bookmark", new_list_bookmark_path(@list) %> <br>
-
-<%= link_to "Back to My Lists", lists_path %>

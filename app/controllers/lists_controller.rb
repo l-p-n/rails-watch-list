@@ -1,10 +1,11 @@
 class ListsController < ApplicationController
   def index
-    @homepage = true
+    # @homepage = true
     @lists = List.all
   end
 
   def show
+    # @listshowpage = true
     @list = List.find(params[:id])
   end
 

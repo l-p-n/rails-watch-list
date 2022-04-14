@@ -29,7 +29,7 @@
 
 <div class="container">
   <div class="add-list">
-    <%= link_to "Create new watch list", new_list_path, class: "btn-add-list" %>
+    <%= link_to "Create new watch list", new_list_path, class: "btn-add" %>
   </div>
   <div class="cards-grid">
     <% @lists.each do |list| %>
@@ -42,6 +42,6 @@
   </div>
 </div>
 
-<div class="footer">
+<div class="container footer">
   <p>Created by l-p-n</p>
 </div>

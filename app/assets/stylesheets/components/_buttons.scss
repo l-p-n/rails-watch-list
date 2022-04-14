@@ -3,7 +3,7 @@
   margin: 48px 66px 58px 0px;
 }
 
-.btn-add-list {
+.btn-add {
   border-radius: 4px;
   background-color: $red;
   padding: 12px 22px;
@@ -13,5 +13,17 @@
   &:hover {
     color: white;
     background-color: $dark-red;
+  }
+}
+
+.btn-back {
+  border-radius: 4px;
+  background-color: white;
+  padding: 12px 22px;
+  width: fit-content;
+  color: $red;
+
+  &:hover {
+    color: $dark-red
   }
 }
