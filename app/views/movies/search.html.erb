@@ -2,7 +2,8 @@
   <% unless @results.count == 0 %>
       <div class="search-results">
         <% @results.each do |result| %>
-          <img src="<%= result.poster_url %>" alt="movie poster">
+          <%= link_to image_tag(result.poster_url, alt: "movie poster"), result %>
+          <%# <img src="<%= result.poster_url" alt="movie poster"> %>
         <% end %>
       </div>
     <% end %>

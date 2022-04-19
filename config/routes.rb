@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   end
   resources :bookmarks, only: [:destroy]
   get 'results', to: 'movies#search'
+  resources :movies, only: [:show]
 end

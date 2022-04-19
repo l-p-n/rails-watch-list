@@ -8,3 +8,14 @@
   background-color: $red;
   padding: 28px 0px;
 }
+
+.top-bar-dark {
+  background-color: $dark-gray;
+  color: $red;
+  padding: 20px 60px;
+}
+
+.bottom-bar-dark {
+  background-color: $dark-gray;
+  padding: 28px 0px 28px 60px;
+}

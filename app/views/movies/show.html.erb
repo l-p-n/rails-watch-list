@@ -1,0 +1,24 @@
+<div class="container-fluid" style="padding: 0px;">
+  <div class="top-bar-dark">
+    <p>Rails-watch-list</p>
+  </div>
+
+  <div class="poster-banner", style="background-image: url('<%= @movie.poster_url %>');">
+    <div class="film-display-card">
+      <img src="<%= @movie.poster_url %>" alt="movie poster">
+      <div class="film-display-infos">
+        <h3><%= @movie.title %></h3>
+        <h5>Overview</h5>
+        <p><%= @movie.overview %></p>
+        <h5>Rating</h5>
+        <div class="score">
+          <p><%= @movie.rating %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-bar-dark">
+    <%= link_to "Back to My Watch Lists", lists_path, class: "btn-back", style: "text-align: center;" %>
+  </div>
+</div>
