@@ -4,10 +4,24 @@
   border-top: 1px solid rgba(241, 22, 52, 0.5);
   color: rgba(241, 22, 52, 0.5);
   padding: 20px 60px;
-  text-align: end;
+  display: flex;
+  justify-content: end;
+  align-items: center;
 
   p {
     font-size: 12px;
+  }
+
+  .fa-github {
+    padding-left: 6px;
+  }
+
+  a {
+    color: rgba(241, 22, 52, 0.5);
+
+    &:hover{
+      color: $red;
+    }
   }
 
 }

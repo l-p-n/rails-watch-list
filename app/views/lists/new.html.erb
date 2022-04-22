@@ -1,9 +1,24 @@
-<div class="container">
-  <%= simple_form_for [ @list ] do |f| %>
-    <%= f.input :name %>
-    <%= f.input :photo, as: :file %>
-    <%= f.submit "Create Watch List", class: "btn btn-primary" %>
-  <% end %>
-  <br>
-  <%= link_to "Back to My Lists", lists_path %>
+<div class="container-fluid" style="padding: 0px;">
+  <div class="top-bar-dark">
+    <p>Rails-watch-list</p>
+  </div>
+
+  <div class="poster-banner", style="background-image: url('<%= asset_path('movie.jpg') %>');">
+    <div class="transp-frame">
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-8 add-form">
+          <h3>Create new watch list</h3>
+          <%= simple_form_for [ @list ] do |f| %>
+          <%= f.input :name %>
+          <%= f.input :photo, as: :file %>
+          <%= f.submit "Create Watch List", class: "btn-add", style: "border:none; margin-top:79px;" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-bar-dark">
+    <%= link_to "Back to My Watch Lists", lists_path, class: "btn-back" %>
+  </div>
 </div>

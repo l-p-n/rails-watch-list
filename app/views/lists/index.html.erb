@@ -1,27 +1,32 @@
-<div class="top-bar">
-  <p>Rails-watch-list</p>
-</div>
+<div class="container-fluid" style="padding:0px";>
+  <div class="top-bar">
+    <%= image_tag("rails.png") %>
+  </div>
 
-<div class="banner">
-  <h1>Save any kind of films</h1>
-</div>
+  <div class="banner">
+    <h1>Save any kind of films</h1>
+  </div>
 
-<div class="bottom-bar">
-  <div class="container">
-    <div class="search-field">
-      <div class="search-bar">
-        <%= form_tag results_path, method: :get do %>
-          <%= text_field_tag :query,
-            params[:query],
-            class: "form-search",
-            placeholder: "Find a film"
-          %>
-      </div>
-      <div class="search-btn">
-        <%= button_tag :submit, class: "btn-search" do %>
-          <i class="fa-solid fa-magnifying-glass"></i>
-        <% end %>
-        <% end %>
+  <div class="bottom-bar">
+    <div class="container">
+      <div class="search-field">
+        <div class="search-bar">
+          <%= form_tag results_path, method: :get do %>
+            <%= text_field_tag :query,
+              params[:query],
+              class: "form-search",
+              placeholder: "Find a film"
+            %>
+        </div>
+        <div class="search-btn">
+          <%= button_tag :submit, class: "btn-search" do %>
+            <i class="fa-solid fa-magnifying-glass"></i>
+          <% end %>
+          <% end %>
+        </div>
+        <div class="angles-down">
+          <i class="fa-solid fa-angles-down"></i>
+        </div>
       </div>
     </div>
   </div>
@@ -43,5 +48,6 @@
 </div>
 
 <div class="container footer">
-  <p>Created by l-p-n</p>
+  <p>Created by <%= link_to "l-p-n", "https://github.com/l-p-n" %></p>
+  <a href="https://github.com/l-p-n"><i class="fa-brands fa-github"></i></a>
 </div>

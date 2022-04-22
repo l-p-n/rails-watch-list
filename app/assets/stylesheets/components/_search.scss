@@ -1,6 +1,7 @@
 .search-field {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .search-bar {
@@ -68,5 +69,15 @@ input:autofill {
     width: 100%;
     object-fit: cover;
     border-radius: 20px;
+  }
+}
+
+.angles-down {
+  position: absolute;
+  right: 60px;
+
+  .fa-angles-down {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 32px;
   }
 }

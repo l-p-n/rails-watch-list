@@ -1,0 +1,18 @@
+.transp-frame {
+  max-width: 1280px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 20px;
+  height: 675px;
+  padding: 114px 0px;
+}
+
+.add-form {
+  color: white;
+
+  h3 {
+    color: $red;
+    padding-bottom: 72px;
+  }
+}

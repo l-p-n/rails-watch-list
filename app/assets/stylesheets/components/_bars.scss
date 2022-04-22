@@ -1,7 +1,12 @@
 .top-bar {
   background-color: $red;
   color: white;
-  padding: 20px 60px;
+  padding: 17px 60px;
+
+  img {
+    height: 24px;
+    vertical-align: baseline;
+  }
 }
 
 .bottom-bar {
@@ -17,5 +22,5 @@
 
 .bottom-bar-dark {
   background-color: $dark-gray;
-  padding: 28px 0px 28px 60px;
+  padding: 31px 0px 31px 60px;
 }

@@ -1,10 +1,24 @@
-<div class="container">
-  <h3>Add a film to your <%= @list.name %> list</h3>
-  <%= simple_form_for [ @list, @bookmark ] do |f| %>
-    <%= f.input :comment, placeholder: "Enter a comment about the movie" %>
-    <%= f.association :movie, collection: Movie.all.order(:title), prompt: "Select a movie" %>
-    <%= f.submit "Add film to this list", class: "btn btn-primary" %>
-  <% end %>
-</div>
+<div class="container-fluid" style="padding: 0px;">
+  <div class="top-bar-dark">
+    <p>Rails-watch-list</p>
+  </div>
 
-<%# input_html: { data: { controller: 'select2' } }  %>
+  <div class="poster-banner", style="background-image: url('<%= asset_path('poster.jpg') %>');">
+    <div class="transp-frame">
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-8 add-form">
+          <h3>Add a film to your <%= @list.name %> list</h3>
+          <%= simple_form_for [ @list, @bookmark ] do |f| %>
+            <%= f.input :comment %>
+            <%= f.association :movie, collection: Movie.all.order(:title), prompt: "Select a movie" %>
+            <%= f.submit "Add film", class: "btn-add", style: "border:none;  margin-top:79px;" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-bar-dark">
+    <%= link_to "Back to My Watch Lists", lists_path, class: "btn-back" %>
+  </div>
+</div>
