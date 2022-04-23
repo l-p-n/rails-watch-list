@@ -1,6 +1,9 @@
 <div class="container-fluid" style="padding:0px";>
   <div class="top-bar">
-    <%= image_tag("rails.png") %>
+    <%= image_tag "rails.png", id: "rails-logo" %>
+    <%= link_to "https://www.themoviedb.org/" do %>
+      <%= image_tag "tmdb-red.png", id: "tmdb-logo" %>
+    <% end %>
   </div>
 
   <div class="banner">

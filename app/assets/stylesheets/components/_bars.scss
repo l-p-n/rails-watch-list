@@ -1,12 +1,10 @@
 .top-bar {
   background-color: $red;
   color: white;
-  padding: 17px 60px;
-
-  img {
-    height: 24px;
-    vertical-align: baseline;
-  }
+  padding: 18px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .bottom-bar {
@@ -17,10 +15,21 @@
 .top-bar-dark {
   background-color: $dark-gray;
   color: $red;
-  padding: 20px 60px;
+  padding: 18px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .bottom-bar-dark {
   background-color: $dark-gray;
   padding: 31px 0px 31px 60px;
+}
+
+#rails-logo {
+  height: 28px;
+}
+
+#tmdb-logo {
+  height: 16px;
 }

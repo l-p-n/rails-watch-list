@@ -1,6 +1,9 @@
 <div class="container-fluid" style="padding: 0px;">
   <div class="top-bar-dark">
-    <p>Rails-watch-list</p>
+    <%= image_tag "rails-red.png", id: "rails-logo" %>
+    <%= link_to "https://www.themoviedb.org/" do %>
+      <%= image_tag "tmdb-black.png", id: "tmdb-logo" %>
+    <% end %>
   </div>
 
   <div class="poster-banner", style="background-image: url('<%= asset_path('poster.jpg') %>');">
