@@ -1,3 +1,9 @@
+<div class="top-bar-dark">
+  <%= image_tag "rails-red.png", id: "rails-logo" %>
+  <%= link_to "https://www.themoviedb.org/" do %>
+    <%= image_tag "tmdb-black.png", id: "tmdb-logo" %>
+  <% end %>
+</div>
 <div class="container">
   <% unless @results.count == 0 %>
       <div class="search-results">
@@ -7,4 +13,7 @@
         <% end %>
       </div>
     <% end %>
+</div>
+ <div class="bottom-bar-dark">
+    <%= link_to "Back to My Watch Lists", lists_path, class: "btn-back" %>
 </div>

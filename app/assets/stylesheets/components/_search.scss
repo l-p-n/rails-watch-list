@@ -64,6 +64,8 @@ input:autofill {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   justify-items: center;
   margin-top: 48px;
+  margin-bottom: 48px;
+  min-height: 73vh;
 
   img {
     width: 100%;
