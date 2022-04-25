@@ -5,11 +5,11 @@ puts 'Cleaning up database...'
 Movie.destroy_all
 puts 'Database cleaned'
 
-api_key = ENV.fetch('TMDB_API_KEY')
+api_key = ENV['TMDB_API_KEY']
 url = "https://api.themoviedb.org/3/movie/top_rated?api_key=#{api_key}"
 
 100.times do |i|
-  puts 'Importing movies'
+  puts "Importing movies - page #{i}"
   movies = JSON.parse(URI.open("#{url}&page=#{i + 1}").read)['results']
   movies.each do |movie|
     base_poster_url = 'https://image.tmdb.org/t/p/original'
