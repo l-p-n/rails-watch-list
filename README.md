@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Watch List
 
-Things you may want to cover:
+Three-model app using many-to-many (n:n) relationship. Developed with Ruby on Rails and deployed to Heroku (https://films-watch-list.herokuapp.com).
+Dataset from The Movie Database (TMDB) API.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Create watch lists
+* Search for movies
+* Add your favourite movies to your watch lists
+* Add comments
